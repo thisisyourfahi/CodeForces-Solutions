@@ -2,14 +2,18 @@
 
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
-    long n, m, a;
+    long long n, m, a;
     cin >> n >> m >> a;
 
-    long alongLength = ceil((float)n / a);
-    long alongWidth = ceil((float)m / a);
-    long totalStones = alongLength * alongWidth;
+    long long stones_length = ceil((double)n / a);
+    long long stones_width = ceil((double)m / a);
 
-    cout << totalStones << endl;
+    long long total_stones = stones_length * stones_width;
+
+    cout << total_stones << endl;
+
+    return 0;
 }
