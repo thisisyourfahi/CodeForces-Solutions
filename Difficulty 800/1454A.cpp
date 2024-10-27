@@ -8,9 +8,7 @@ void generate_permutation(int n) {
     }
 
     for(int i = 0; i < n - 1; i++) {
-        int temp = perm[i];
-        perm[i] = perm[i + 1];
-        perm[i + 1] = temp;
+        swap(perm[i], perm[i + 1]);
     }
 
     for(int value : perm) {
