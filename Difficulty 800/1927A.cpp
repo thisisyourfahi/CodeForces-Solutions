@@ -1,41 +1,35 @@
 #include <bits/stdc++.h>
-using  namespace std;
+using namespace std;
+#define ll long long int
 
-void solve(int n, string s){
-    int segments_length = 0;
-    int first_cell = 0, last_cell = 0;
-    for(int i = 0; i < n; i++){
-        if(s[i] == 'B'){
-            first_cell = i;
+int white(string s, int n) {
+    int first_b = 0, last_b;
+    for(int i = 0; i < n; i++) {
+        if(s[i] == 'B') {
+            first_b = i;
             break;
         }
     }
-    for(int i = n - 1; i >= 0; i--){
-        if(s[i] == 'B'){
-            last_cell = i;
+    for(int i = n - 1; i >= 0; i--) {
+        if(s[i] == 'B') {
+            last_b = i;
             break;
         }
     }
 
-    if(last_cell - first_cell == 0){
-        cout << 1 << endl;
-    }
-    else{
-        cout << last_cell - first_cell + 1 << endl;
-    }
-    
+    return last_b - first_b + 1;
 }
 
-int main(){
-    int t;
-    cin >> t;
+int main() {
+    ios:: sync_with_stdio(false);
+    cin.tie(nullptr);
 
-    while(t--){
-        int n;
-        string s;
-        cin >> n >> s;
+    int t; cin >> t;
+    while(t--) {
+        int n; cin >> n;
+        string s; cin >> s;
 
-        solve(n, s);
+        cout << white(s, n) << endl;
     }
 
     return 0;
