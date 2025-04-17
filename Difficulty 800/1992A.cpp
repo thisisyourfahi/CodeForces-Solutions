@@ -1,25 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long int
 
-int max_bananas() {
+void solve() {
     int a, b, c;
     cin >> a >> b >> c;
-
     for(int i = 1; i <= 5; i++) {
-        int *min_ptr = &a;
-        if(*min_ptr > b) min_ptr = &b;
-        if(*min_ptr > c) min_ptr = &c;
-        (*min_ptr)++;
+        if(a == min({a, b, c})) {
+            a++;
+        }
+        else if(b == min({a, b, c})) {
+            b++;
+        }
+        else {
+            c++;
+        }
     }
-    return (a * b * c);
+    cout << a * b * c << endl;
 }
 
 int main() {
-    int test_cases;
-    cin >> test_cases;
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-    while(test_cases--) {
-        cout << max_bananas() << endl;
+    int t; cin >> t;
+    while(t--) {
+        solve();
     }
+
     return 0;
 }
