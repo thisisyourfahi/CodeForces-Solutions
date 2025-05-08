@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long int
 
 void solve() {
     int n; cin >> n;
